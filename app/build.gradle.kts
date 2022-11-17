@@ -20,9 +20,12 @@ dependencies {
 
     projectImplementation(Modules.commonDomain)
     projectImplementation(Modules.commonData)
+    projectImplementation(Modules.commonDataLocal)
     projectImplementation(Modules.commonDi)
     projectImplementation(Modules.commonUi)
     projectImplementation(Modules.commonMultiCompose)
+
+    projectImplementation(Modules.featureProductListImpl)
 
     implementation(Deps.Compose.ui)
     implementation(Deps.Compose.foundation)
@@ -37,7 +40,6 @@ dependencies {
     implementation(Deps.material)
     implementation(Deps.constraintLayout)
     implementation(Deps.Compose.navigation)
-    implementation(Deps.Accompanist.systemUiController)
     testImplementation(Deps.Test.androidJUnit)
     androidTestImplementation(Deps.Test.espresso)
     androidTestImplementation(Deps.Test.jUnit)
