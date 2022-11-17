@@ -12,4 +12,7 @@ object Modules {
     const val commonUi = ":common:ui"
     const val commonUiComponents = ":common:ui-components"
     const val commonMultiCompose = ":common:multi-compose"
+
+    const val featureProductListApi = ":feature:product-list:api"
+    const val featureProductListImpl = ":feature:product-list:impl"
 }
