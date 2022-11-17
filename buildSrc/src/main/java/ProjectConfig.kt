@@ -9,7 +9,7 @@ object Config {
 }
 
 object AppConfig {
-    const val applicationId = "tech.antee.compose_multimodule_template"
+    const val applicationId = "tech.antee.products"
     const val versionCode = 1
     const val versionName = "1.0"
 }

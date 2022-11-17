@@ -3,14 +3,19 @@ package tech.antee.products
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
+import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import tech.antee.products.di.LocalAppProvider
+import tech.antee.products.multi_compose.find
+import tech.antee.products.product_list.api.ProductListFeature
+import tech.antee.products.product_list.impl.di.LocalProductListDependencies
 import tech.antee.products.ui.theme.MyApplicationTheme
 
-// TODO("Implement your app")
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,15 +32,13 @@ class MainActivity : ComponentActivity() {
     private fun Navigation(modifier: Modifier = Modifier) {
         val navController = rememberNavController()
         val destinations = LocalAppProvider.current.destinations
-//        val someFeature = destinations.find<SomeFeature>()
-//        val anotherFeature = destinations.find<AnotherFeature>()
+        val productListFeature = destinations.find<ProductListFeature>()
 
-//        Box(modifier.fillMaxSize()) {
-//            NavHost(navController, someFeature.featureRoute) {
-//                with(someFeature) { composable(navController, destinations) }
-//                with(anotherFeature) { composable(navController, destinations) }
-//            }
-//        }
+        Box(modifier.fillMaxSize()) {
+            NavHost(navController, productListFeature.featureRoute) {
+                with(productListFeature) { composable(navController, destinations) }
+            }
+        }
     }
 
     @Composable
@@ -44,6 +47,7 @@ class MainActivity : ComponentActivity() {
     ) {
         CompositionLocalProvider(
             LocalAppProvider provides application.appProvider,
+            LocalProductListDependencies provides application.appProvider,
             content = content
         )
     }

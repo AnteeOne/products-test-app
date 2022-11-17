@@ -13,10 +13,6 @@ dependencies {
     implementation(Deps.coreKtx)
     implementation(Deps.Coroutines.kotlinCore)
 
-    implementation(Deps.Local.room)
-    implementation(Deps.Local.roomKtx)
-    kapt(Deps.Local.roomKapt)
-
     implementation(Deps.Dagger.core)
     kapt(Deps.Dagger.compiler)
 }

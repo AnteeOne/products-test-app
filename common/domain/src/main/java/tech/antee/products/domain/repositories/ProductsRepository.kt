@@ -7,5 +7,9 @@ interface ProductsRepository {
 
     val productsFlow: Flow<List<Product>>
 
-    fun delete(id: String)
+    suspend fun fetch()
+
+    suspend fun delete(id: String)
+
+    suspend fun delete(ids: List<String>)
 }

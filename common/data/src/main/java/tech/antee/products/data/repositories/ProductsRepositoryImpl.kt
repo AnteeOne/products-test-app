@@ -17,5 +17,9 @@ class ProductsRepositoryImpl @Inject constructor(
         .productsFlow
         .map(productDomainMapper::mapListFromData)
 
-    override fun delete(id: String) = productsLocalSource.delete(id)
+    override suspend fun fetch() = productsLocalSource.fetch()
+
+    override suspend fun delete(id: String) = productsLocalSource.delete(id)
+
+    override suspend fun delete(ids: List<String>) = productsLocalSource.delete(ids.toHashSet())
 }

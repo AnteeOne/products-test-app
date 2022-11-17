@@ -7,5 +7,9 @@ interface ProductsLocalSource {
 
     val productsFlow: Flow<List<ProductDto>>
 
-    fun delete(id: String)
+    suspend fun fetch()
+
+    suspend fun delete(id: String)
+
+    suspend fun delete(ids: Set<String>)
 }
