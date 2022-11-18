@@ -9,6 +9,6 @@ class DeleteProductUseCase @Inject constructor(
     private val productsRepository: ProductsRepository
 ) {
 
-    suspend operator fun invoke(id: String) = productsRepository
+    suspend operator fun invoke(id: String): Unit = productsRepository
         .delete(id)
 }

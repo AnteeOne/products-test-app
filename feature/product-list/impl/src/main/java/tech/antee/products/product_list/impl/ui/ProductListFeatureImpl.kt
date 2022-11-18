@@ -6,6 +6,8 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import tech.antee.products.multi_compose.Destinations
 import tech.antee.products.multi_compose.di.injectedViewModel
+import tech.antee.products.multi_compose.find
+import tech.antee.products.product_details.api.ProductDetailsFeature
 import tech.antee.products.product_list.api.ProductListFeature
 import tech.antee.products.product_list.impl.di.DaggerProductListComponent
 import tech.antee.products.product_list.impl.di.LocalProductListDependencies
@@ -26,9 +28,10 @@ class ProductListFeatureImpl @Inject constructor() : ProductListFeature() {
                 .viewModel
         }
 
+        val productDetailsFeature = destinations.find<ProductDetailsFeature>()
         ProductListScreen(
             viewModel = viewModel,
-            onNavToDetails = { } // TODO: implement navigation to the details
+            onNavToDetails = { id -> navController.navigate(productDetailsFeature.destination(id)) }
         )
     }
 }

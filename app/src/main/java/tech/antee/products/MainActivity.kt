@@ -12,6 +12,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import tech.antee.products.di.LocalAppProvider
 import tech.antee.products.multi_compose.find
+import tech.antee.products.product_details.api.ProductDetailsFeature
+import tech.antee.products.product_details.impl.di.LocalProductDetailsDependencies
 import tech.antee.products.product_list.api.ProductListFeature
 import tech.antee.products.product_list.impl.di.LocalProductListDependencies
 import tech.antee.products.ui.theme.MyApplicationTheme
@@ -32,11 +34,14 @@ class MainActivity : ComponentActivity() {
     private fun Navigation(modifier: Modifier = Modifier) {
         val navController = rememberNavController()
         val destinations = LocalAppProvider.current.destinations
+
         val productListFeature = destinations.find<ProductListFeature>()
+        val productDetailsFeature = destinations.find<ProductDetailsFeature>()
 
         Box(modifier.fillMaxSize()) {
             NavHost(navController, productListFeature.featureRoute) {
                 with(productListFeature) { composable(navController, destinations) }
+                with(productDetailsFeature) { composable(navController, destinations) }
             }
         }
     }
@@ -48,6 +53,7 @@ class MainActivity : ComponentActivity() {
         CompositionLocalProvider(
             LocalAppProvider provides application.appProvider,
             LocalProductListDependencies provides application.appProvider,
+            LocalProductDetailsDependencies provides application.appProvider,
             content = content
         )
     }

@@ -16,5 +16,5 @@ interface ProductListFeatureModule {
     @Singleton
     @IntoMap
     @FeatureKey(ProductListFeature::class)
-    fun bookSearchFeature(feature: ProductListFeatureImpl): Feature
+    fun productListFeature(feature: ProductListFeatureImpl): Feature
 }

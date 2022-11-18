@@ -29,9 +29,9 @@ import tech.antee.products.ui.theme.Dimensions
 
 @Composable
 fun ProductListScreen(
-    modifier: Modifier = Modifier,
     viewModel: ProductListViewModel,
-    onNavToDetails: (String) -> Unit
+    onNavToDetails: (String) -> Unit,
+    modifier: Modifier = Modifier
 ) {
     val uiState by viewModel.uiState.collectAsState()
 

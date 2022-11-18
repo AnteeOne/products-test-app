@@ -11,10 +11,10 @@ dependencies {
     projectImplementation(Modules.commonDomain)
     projectImplementation(Modules.commonDi)
     projectImplementation(Modules.commonUi)
+    projectImplementation(Modules.commonUiComponents)
     projectImplementation(Modules.commonMultiCompose)
 
-    projectApi(Modules.featureProductListApi)
-    projectImplementation(Modules.featureProductDetailsApi)
+    projectApi(Modules.featureProductDetailsApi)
 
     implementation(Deps.appCompat)
     implementation(Deps.coreKtx)
