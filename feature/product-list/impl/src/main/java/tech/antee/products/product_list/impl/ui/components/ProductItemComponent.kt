@@ -16,7 +16,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import tech.antee.products.product_list.impl.ui.items.ProductItem
@@ -43,16 +44,21 @@ fun ProductItemComponent(
             AsyncImage(
                 modifier = Modifier.size(ProductItemComponentDefaults.IMAGE_SIZE),
                 model = item.image,
-                contentDescription = null
+                contentScale = ContentScale.Crop,
+                contentDescription = item.name
             )
             Spacer(Modifier.width(Dimensions.spacingHorizontalXs))
             Column {
                 Text(
                     modifier = Modifier.width(ProductItemComponentDefaults.NAME_WIDTH),
-                    text = name
+                    text = name,
+                    style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold)
                 )
                 Spacer(modifier = Modifier.height(Dimensions.spacingVerticalXxs))
-                Text(text = price.toString())
+                Text(
+                    text = price.toString(),
+                    style = MaterialTheme.typography.titleLarge
+                )
             }
         }
         Column {

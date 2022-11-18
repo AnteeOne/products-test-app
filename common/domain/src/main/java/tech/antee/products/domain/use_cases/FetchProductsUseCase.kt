@@ -8,5 +8,5 @@ import javax.inject.Singleton
 class FetchProductsUseCase @Inject constructor(
     private val productsRepository: ProductsRepository
 ) {
-    suspend operator fun invoke() = productsRepository.fetch()
+    suspend operator fun invoke(): Unit = productsRepository.fetch()
 }

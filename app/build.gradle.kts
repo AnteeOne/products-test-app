@@ -26,6 +26,7 @@ dependencies {
     projectImplementation(Modules.commonMultiCompose)
 
     projectImplementation(Modules.featureProductListImpl)
+    projectImplementation(Modules.featureProductDetailsImpl)
 
     implementation(Deps.Compose.ui)
     implementation(Deps.Compose.foundation)
