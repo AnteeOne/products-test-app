@@ -14,26 +14,13 @@ android {
 }
 
 dependencies {
-    projectImplementation(Modules.coreUi)
-    projectImplementation(Modules.coreStrings)
-    projectImplementation(Modules.coreUtils)
-
-    projectImplementation(Modules.commonDomain)
-    projectImplementation(Modules.commonData)
-    projectImplementation(Modules.commonDataLocal)
-    projectImplementation(Modules.commonDi)
-    projectImplementation(Modules.commonUi)
-    projectImplementation(Modules.commonMultiCompose)
-
-    projectImplementation(Modules.featureProductListImpl)
-    projectImplementation(Modules.featureProductDetailsImpl)
-
     implementation(Deps.Compose.ui)
     implementation(Deps.Compose.foundation)
     implementation(Deps.Compose.material)
     implementation(Deps.Compose.material3)
     implementation(Deps.Compose.activity)
     implementation(Deps.Compose.toolsPreview)
+    implementation(Deps.Compose.koil)
     debugImplementation(Deps.Compose.tools)
 
     implementation(Deps.appCompat)
@@ -41,10 +28,13 @@ dependencies {
     implementation(Deps.material)
     implementation(Deps.constraintLayout)
     implementation(Deps.Compose.navigation)
-    testImplementation(Deps.Test.androidJUnit)
-    androidTestImplementation(Deps.Test.espresso)
-    androidTestImplementation(Deps.Test.jUnit)
+
+    implementation(Deps.Coroutines.kotlinCore)
 
     implementation(Deps.Dagger.core)
     kapt(Deps.Dagger.compiler)
+
+    testImplementation(Deps.Test.androidJUnit)
+    androidTestImplementation(Deps.Test.espresso)
+    androidTestImplementation(Deps.Test.jUnit)
 }

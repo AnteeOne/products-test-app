@@ -10,13 +10,13 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import tech.antee.products.common.ui.theme.MyApplicationTheme
 import tech.antee.products.di.LocalAppProvider
+import tech.antee.products.features.product_details.api.ProductDetailsFeature
+import tech.antee.products.features.product_details.impl.di.LocalProductDetailsDependencies
+import tech.antee.products.features.product_list.api.ProductListFeature
+import tech.antee.products.features.product_list.impl.di.LocalProductListDependencies
 import tech.antee.products.multi_compose.find
-import tech.antee.products.product_details.api.ProductDetailsFeature
-import tech.antee.products.product_details.impl.di.LocalProductDetailsDependencies
-import tech.antee.products.product_list.api.ProductListFeature
-import tech.antee.products.product_list.impl.di.LocalProductListDependencies
-import tech.antee.products.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

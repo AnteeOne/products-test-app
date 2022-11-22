@@ -4,7 +4,7 @@ import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
 import tech.antee.products.ProductsApp
-import tech.antee.products.di.qualifiers.ApplicationContext
+import tech.antee.products.common.di.qualifiers.ApplicationContext
 import javax.inject.Singleton
 
 @Singleton
