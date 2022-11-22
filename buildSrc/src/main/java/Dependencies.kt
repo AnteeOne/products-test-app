@@ -6,11 +6,9 @@ object Versions {
     const val androidxCoreKtx = "1.7.0"
     const val androidxConstraint = "2.1.1"
     const val androidxNavigation = "2.4.2"
-    const val androidxLifecycle = "2.4.0"
 
     const val material = "1.5.0-alpha04"
 
-    const val javaxInject = "1"
     const val dagger = "2.41"
     const val compose = "1.1.0-beta04"
     const val composeMaterial = "1.0.0-alpha02"
@@ -28,7 +26,6 @@ object Deps {
     const val appCompat = "androidx.appcompat:appcompat:${Versions.androidxAppcompat}"
     const val material = "com.google.android.material:material:${Versions.material}"
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.androidxConstraint}"
-    const val inject = "javax.inject:javax.inject:${Versions.javaxInject}"
 
     object Test {
         const val jUnit = "junit:junit:${Versions.junit}"
@@ -44,7 +41,6 @@ object Deps {
     object Coroutines {
         const val kotlinCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutine}"
         const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutine}"
-        const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.androidxLifecycle}"
     }
 
     object Dagger {
@@ -59,11 +55,8 @@ object Deps {
         const val foundation = "androidx.compose.foundation:foundation:${Versions.compose}"
         const val material = "androidx.compose.material:material:${Versions.compose}"
         const val material3 = "androidx.compose.material3:material3:${Versions.composeMaterial}"
-        const val materialIconsCore = "androidx.compose.material:material-icons-core:${Versions.compose}"
-        const val materialIconsExtended = "androidx.compose.material:material-icons-extended:${Versions.compose}"
         const val activity = "androidx.activity:activity-compose:${Versions.androidxAppcompat}"
         const val navigation = "androidx.navigation:navigation-compose:${Versions.androidxNavigation}"
-        const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.androidxLifecycle}"
         const val jUnit = "androidx.compose.ui:ui-test-junit4:${Versions.compose}"
         const val koil = "io.coil-kt:coil-compose:${Versions.koil}"
     }
